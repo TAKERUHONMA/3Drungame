@@ -1,9 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
+
+const int ENEMY_MAX{ 2 };
+
+
 class Enemy :
     public GameObject
 {
 	int hModel_;
+	double counter;
+	bool isAlive_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

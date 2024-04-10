@@ -2,6 +2,7 @@
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 #include "Engine/Collider.h"
+#include "Enemy.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent, "Player"),hModel_(-1)
