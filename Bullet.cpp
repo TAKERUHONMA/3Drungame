@@ -18,7 +18,7 @@ void Bullet::Initialize()
 
 void Bullet::Update()
 {
-	transform_.position_.z -= 0.1;
+	transform_.position_.z -= 0.3;
 	if (transform_.position_.z <= -5.0f)
 	{
 		KillMe();

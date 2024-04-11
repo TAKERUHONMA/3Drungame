@@ -18,34 +18,34 @@ void Enemy::Initialize()
 
 void Enemy::Update()
 {
-		if (counter == 0)
-		{
-			Bullet* e = Instantiate<Bullet>(this->GetParent());
-			Bullet* e2 = Instantiate<Bullet>(this->GetParent());
-			e->SetPosition(this->transform_.position_ = {-1.5,0,25}); //“G‚ÌˆÊ’u
-			e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
-			counter = 190;
-		}
-		else if (counter == 120)
-		{
-			Bullet* e2 = Instantiate<Bullet>(this->GetParent());
-			Bullet* e3 = Instantiate<Bullet>(this->GetParent());
-			e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
-			e3->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
-			counter = 240;
-		}
-		else if (counter == 220)
-		{
-			Bullet* e = Instantiate<Bullet>(this->GetParent());
-			Bullet* e3 = Instantiate<Bullet>(this->GetParent());
-			e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
-			e->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
-			counter = 200;
-		}
-		else
-		{
-			counter -= 1;
-		}
+	if (counter == 0)
+	{
+		Bullet* e = Instantiate<Bullet>(this->GetParent());
+		Bullet* e2 = Instantiate<Bullet>(this->GetParent());
+		e->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
+		e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
+		counter = 250;
+	}
+	else if (counter == 200)
+	{
+		Bullet* e2 = Instantiate<Bullet>(this->GetParent());
+		Bullet* e3 = Instantiate<Bullet>(this->GetParent());
+		e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
+		e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
+		counter = 450;
+	}
+	else if (counter == 400)
+	{
+		Bullet* e = Instantiate<Bullet>(this->GetParent());
+		Bullet* e3 = Instantiate<Bullet>(this->GetParent());
+		e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
+		e->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
+		counter = 50;
+	}
+	else
+	{
+		counter -= 1;
+	}
 }
 
 void Enemy::Draw()

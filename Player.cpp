@@ -5,7 +5,7 @@
 #include "Enemy.h"
 
 Player::Player(GameObject* parent)
-	:GameObject(parent, "Player"),hModel_(-1)
+	:GameObject(parent, "Player"),hModel_(-1),isAlive_(true)
 {
 }
 
@@ -21,16 +21,20 @@ void Player::Initialize()
 
 void Player::Update()
 {
-	if (Input::IsKey(DIK_LEFT))
+	if (transform_.position_.x <= 1.5)
 	{
-		transform_.position_.x = -1.5f;
+		if (Input::IsKey(DIK_RIGHT))
+		{
+			transform_.position_.x += 0.1f;
+		}
 	}
-	else if (Input::IsKey(DIK_RIGHT))
+	 if (transform_.position_.x >= -1.5)
 	{
-		transform_.position_.x = 1.5f;
+		if (Input::IsKey(DIK_LEFT))
+		{
+			transform_.position_.x -= 0.1f;
+		}
 	}
-	else
-		transform_.position_.x = 0;
 }
 
 void Player::Draw()
