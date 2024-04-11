@@ -1,10 +1,11 @@
 #include "Enemy.h"
 #include "Engine/Model.h"
 #include "Engine/SphereCollider.h"
+#include "Bullet.h"
 #include "Engine/Input.h"
 
 Enemy::Enemy(GameObject* parent)
-	:GameObject(parent, "Enemy"), hModel_(-1),isAlive_(false)
+	:GameObject(parent, "Enemy"), hModel_(-1),isAlive_(false),counter(0),ENEMY_NUM(0)
 {
 }
 
@@ -12,32 +13,47 @@ void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Enemy.fbx");
 	assert(hModel_ >= 0);
-	transform_.position_ = { 0,0,25 };
-	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.5f);
-	AddCollider(collision);
-
+	transform_.position_ = { 0,0,0 };
 }
 
 void Enemy::Update()
-{	
-	if (isAlive_ == false)
-	{
-			transform_.position_.z -= 0.1;
-			if (transform_.position_.z <= -5.0f)
-			{
-				KillMe();
-			}
-	}		
+{
+		if (counter == 0)
+		{
+			Bullet* e = Instantiate<Bullet>(this->GetParent());
+			Bullet* e2 = Instantiate<Bullet>(this->GetParent());
+			e->SetPosition(this->transform_.position_ = {-1.5,0,25}); //“G‚ÌˆÊ’u
+			e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
+			counter = 190;
+		}
+		else if (counter == 120)
+		{
+			Bullet* e2 = Instantiate<Bullet>(this->GetParent());
+			Bullet* e3 = Instantiate<Bullet>(this->GetParent());
+			e2->SetPosition(this->transform_.position_ = { 0,0,25 }); //“G‚ÌˆÊ’u
+			e3->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
+			counter = 240;
+		}
+		else if (counter == 220)
+		{
+			Bullet* e = Instantiate<Bullet>(this->GetParent());
+			Bullet* e3 = Instantiate<Bullet>(this->GetParent());
+			e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
+			e->SetPosition(this->transform_.position_ = { -1.5,0,25 }); //“G‚ÌˆÊ’u
+			counter = 200;
+		}
+		else
+		{
+			counter -= 1;
+		}
 }
 
 void Enemy::Draw()
 {
-		for (int ENEMY_NUM = 0; ENEMY_NUM < ENEMY_MAX; ENEMY_NUM++)
-		{
-			Model::SetTransform(hModel_, transform_);
-			Model::Draw(hModel_);
-			transform_.position_.x = ENEMY_NUM * 1.5 - 1.5;
-		}
+
+		//Model::SetTransform(hModel_, transform_);
+		//Model::Draw(hModel_);
+
 }
 
 void Enemy::Release()

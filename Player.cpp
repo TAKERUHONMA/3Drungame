@@ -45,7 +45,7 @@ void Player::Release()
 
 void Player::OnCollision(GameObject* pTarget)
 {
-	if (pTarget->GetObjectName() == "Enemy")
+	if (pTarget->GetObjectName() == "Bullet")
 	{
 		this->KillMe();
 		pTarget->KillMe();
