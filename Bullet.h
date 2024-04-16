@@ -4,6 +4,8 @@ class Bullet :
     public GameObject
 {
 	int hModel_;
+	int hModel2_;
+	double count_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
@@ -20,5 +22,8 @@ public:
 
 	//開放
 	void Release() override;
+
+	//何かに当たった
+	void OnCollision(GameObject* pTarget) override;
 };
 

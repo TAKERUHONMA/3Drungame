@@ -1,15 +1,17 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
-class TitleScene
+
+class Text;
+class GameOverScene
 	:public GameObject
 {
-	int hTitle_;
 	Text* pText;
+	int hOver_;
 public:
 	//コンストラクタ
-	//引数：parent  親オブジェクト（SceneManager）
-	TitleScene(GameObject* parent);
+//引数：parent  親オブジェクト（SceneManager）
+	GameOverScene(GameObject* parent);
 
 	//初期化
 	void Initialize() override;

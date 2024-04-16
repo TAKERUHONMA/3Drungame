@@ -1,15 +1,24 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Text.h"
-class TitleScene
-	:public GameObject
+#include <vector>
+
+using std::vector;
+
+enum STAGE_OBJ {
+	FLOOR,
+	WALL,
+};
+
+class Stage :
+    public GameObject
 {
-	int hTitle_;
-	Text* pText;
+	int hFloor_;
+	int hBlock_;
+	int stageWidth_, stageHeight_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	TitleScene(GameObject* parent);
+	Stage(GameObject* parent);
 
 	//初期化
 	void Initialize() override;

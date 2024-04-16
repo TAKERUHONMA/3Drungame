@@ -1,6 +1,8 @@
 #include "PlayScene.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Stage.h"
+
 
 
 PlayScene::PlayScene(GameObject* parent)
@@ -10,6 +12,7 @@ PlayScene::PlayScene(GameObject* parent)
 
 void PlayScene::Initialize()
 {
+	Instantiate<Stage>(this);
 	Instantiate<Player>(this);
 	Instantiate<Enemy>(this);
 }

@@ -11,24 +11,24 @@ Player::Player(GameObject* parent)
 
 void Player::Initialize()
 {
-	hModel_ = Model::Load("Player.fbx");
+	hModel_ = Model::Load("Man.fbx");
 	assert(hModel_ >= 0);
-	transform_.position_ = { 0,0,-1.0f };
+	transform_.position_ = { 0,0,0 };
 
-	SphereCollider* collision = new SphereCollider({ 0, 0, 0 }, 0.5f);
+	SphereCollider* collision = new SphereCollider({ 0.5, 0, 0 }, 0.2f);
 	AddCollider(collision);
 }
 
 void Player::Update()
 {
-	if (transform_.position_.x <= 1.5)
+	if (transform_.position_.x <= 1)
 	{
 		if (Input::IsKey(DIK_RIGHT))
 		{
 			transform_.position_.x += 0.1f;
 		}
 	}
-	 if (transform_.position_.x >= -1.5)
+	 if (transform_.position_.x >= -1)
 	{
 		if (Input::IsKey(DIK_LEFT))
 		{
@@ -52,6 +52,6 @@ void Player::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "Bullet")
 	{
 		this->KillMe();
-		pTarget->KillMe();
+		//pTarget->KillMe();
 	}
 }
