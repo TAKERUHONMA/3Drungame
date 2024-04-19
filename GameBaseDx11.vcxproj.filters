@@ -103,6 +103,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="Medium.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -182,6 +183,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="GameOverScene.h" />
+    <ClInclude Include="Medium.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

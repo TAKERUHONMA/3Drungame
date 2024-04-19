@@ -1,22 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
-
-const int ENEMY_MAX{ 3 };
-
-
-class Bullet;
-class Medium;
-class Enemy :
+class Medium :
     public GameObject
 {
 	int hModel_;
-	double counter;
+	int count;
+	double z;
 	bool isAlive_;
-	int ENEMY_NUM;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Enemy(GameObject* parent);
+	Medium(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -29,5 +23,7 @@ public:
 
 	//開放
 	void Release() override;
+
+	void OnCollision(GameObject* pTarget);
 };
 

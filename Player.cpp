@@ -15,7 +15,7 @@ void Player::Initialize()
 	assert(hModel_ >= 0);
 	transform_.position_ = { 0,0,0 };
 
-	SphereCollider* collision = new SphereCollider({ 0.5, 0, 0 }, 0.2f);
+	SphereCollider* collision = new SphereCollider({ 0.5, 0, 0 }, 0.3f);
 	AddCollider(collision);
 }
 
