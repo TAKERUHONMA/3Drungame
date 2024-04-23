@@ -6,7 +6,7 @@
 #include "Engine/Input.h"
 
 Enemy::Enemy(GameObject* parent)
-	:GameObject(parent, "Enemy"), hModel_(-1),isAlive_(false),counter(0),ENEMY_NUM(0)
+	:GameObject(parent, "Enemy"), hModel_(-1),isAlive_(false),counter(0),ENEMY_NUM(0),i(3)
 {
 }
 
@@ -15,6 +15,7 @@ void Enemy::Initialize()
 	hModel_ = Model::Load("Enemy.fbx");
 	assert(hModel_ >= 0);
 	transform_.position_ = { 0,0,0 };
+	
 }
 
 void Enemy::Update()
@@ -27,7 +28,8 @@ void Enemy::Update()
 		e->SetPosition(this->transform_.position_ = { -0.5,0,25 }); //“G‚ÌˆÊ’u
 		e2->SetPosition(this->transform_.position_ = { 0.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { 1,0.5,25 });
-		counter = 250;
+		counter =  RUNDOM[rand() % i + 1];
+		counter += 50;
 	}
 	else if (counter == 200)
 	{
@@ -37,7 +39,8 @@ void Enemy::Update()
 		e2->SetPosition(this->transform_.position_ = { 0.5,0,25 }); //“G‚ÌˆÊ’u
 		e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { -1,0.5,25 });
-		counter = 450;
+		counter = RUNDOM[rand() % i + 1];
+		counter += 50;
 	}
 	else if (counter == 400)
 	{
@@ -47,7 +50,8 @@ void Enemy::Update()
 		e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
 		e->SetPosition(this->transform_.position_ = { -0.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { 0,0.5,25 });
-		counter = 50;
+		counter = RUNDOM[rand() % i + 1];
+		counter += 50;
 	}
 	else
 	{

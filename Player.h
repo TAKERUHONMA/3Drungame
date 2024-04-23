@@ -26,5 +26,7 @@ public:
 
 	//‰½‚©‚É“–‚½‚Á‚½
 	void OnCollision(GameObject* pTarget) override;
+	void DeActivateMe() { isAlive_ = false; }
+	void ActivateMe() { isAlive_ = true; }
 };
 

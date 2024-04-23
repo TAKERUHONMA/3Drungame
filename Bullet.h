@@ -6,6 +6,8 @@ class Bullet :
 	int hModel_;
 	int hModel2_;
 	double count_;
+	double speed_;
+	bool isAlive_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
@@ -25,5 +27,7 @@ public:
 
 	//何かに当たった
 	void OnCollision(GameObject* pTarget) override;
+	void DeActivateMe() { isAlive_ = false; }
+	void ActivateMe() { isAlive_ = true; }
 };
 

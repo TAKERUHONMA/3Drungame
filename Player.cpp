@@ -52,6 +52,7 @@ void Player::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "Bullet")
 	{
 		this->KillMe();
+		this->DeActivateMe();
 		//pTarget->KillMe();
 	}
 }

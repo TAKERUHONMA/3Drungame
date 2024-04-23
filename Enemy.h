@@ -2,6 +2,7 @@
 #include "Engine/GameObject.h"
 
 const int ENEMY_MAX{ 3 };
+const int RUNDOM[] = { 0,200,400 };
 
 
 class Bullet;
@@ -13,6 +14,7 @@ class Enemy :
 	double counter;
 	bool isAlive_;
 	int ENEMY_NUM;
+	int i;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
