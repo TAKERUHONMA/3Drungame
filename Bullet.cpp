@@ -1,10 +1,11 @@
 #include "Bullet.h"
+#include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/SphereCollider.h"
 #include "Engine/SceneManager.h"
 
 Bullet::Bullet(GameObject* parent)
-	:GameObject(parent, "Bullet"), hModel_(-1), count_(0), speed_(0.3f),isAlive_(true)
+	:GameObject(parent, "Bullet"), hModel_(-1), count_(0), speed_(0),counter_(0),isAlive_(true)
 {
 }
 
@@ -15,6 +16,7 @@ void Bullet::Initialize()
 	transform_.position_ = { 0,0,0 };
 	SphereCollider* collision = new SphereCollider({ 0,0,0 }, 0.3f);
 	AddCollider(collision);
+	speed_ = 0.5f;
 }
 
 void Bullet::Update()
@@ -35,16 +37,6 @@ void Bullet::Draw()
 
 void Bullet::Release()
 {
-}
-
-void Bullet::OnCollision(GameObject* pTarget)
-{
-	if (pTarget->GetObjectName() == "Player")
-	{
-		pTarget->KillMe();
-		SceneManager* pSM = (SceneManager*)FindObject("SceneManager");
-		pSM->ChangeScene(SCENE_ID_GAMEOVER);
-	}
 }
 
 

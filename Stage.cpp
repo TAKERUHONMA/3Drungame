@@ -14,7 +14,7 @@ void Stage::Initialize()
     //hBlock_ = Model::Load("Block.fbx");
     assert(hFloor_ >= 0);
     //assert(hBlock_ >= 0);
-    transform_.position_ = { 0,0,-2 };
+    transform_.position_ = { 0,0,-2};
 }
 
 void Stage::Update()

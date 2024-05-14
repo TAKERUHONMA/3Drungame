@@ -1,11 +1,12 @@
 #pragma once
 #include "Engine/GameObject.h"
+
 class Bullet :
     public GameObject
 {
 	int hModel_;
-	int hModel2_;
-	double count_;
+	int count_;
+	int counter_;
 	double speed_;
 	bool isAlive_;
 public:
@@ -26,7 +27,7 @@ public:
 	void Release() override;
 
 	//‰½‚©‚É“–‚½‚Á‚½
-	void OnCollision(GameObject* pTarget) override;
+	void SetSpeed(double _speed) { speed_ = _speed; }
 	void DeActivateMe() { isAlive_ = false; }
 	void ActivateMe() { isAlive_ = true; }
 };

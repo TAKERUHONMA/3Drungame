@@ -24,14 +24,11 @@
       <UniqueIdentifier>{47a6a3f5-8cfd-436b-8d58-beccd108f3f3}</UniqueIdentifier>
       <Extensions>hlsl</Extensions>
     </Filter>
-    <Filter Include="Player">
-      <UniqueIdentifier>{2ff6baf6-fb63-4a1b-85a4-13552056a7b3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{ebe18e77-93d3-44a9-be00-fda0ebc97b24}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Enemy">
-      <UniqueIdentifier>{18d87e90-3a91-4342-83ca-e3932577d709}</UniqueIdentifier>
+    <Filter Include="GameChara">
+      <UniqueIdentifier>{ba907ae8-3283-49dc-ade0-96c9a6871f81}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,9 +102,6 @@
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="Player.cpp">
-      <Filter>Player</Filter>
-    </ClCompile>
     <ClCompile Include="GameOverScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -120,14 +114,20 @@
     <ClCompile Include="PlayScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Enemy</Filter>
+    <ClCompile Include="GameClearScene.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Enemy</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameChara</Filter>
     </ClCompile>
     <ClCompile Include="Medium.cpp">
-      <Filter>Enemy</Filter>
+      <Filter>GameChara</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>GameChara</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>GameChara</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -201,9 +201,6 @@
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="Stage.h" />
-    <ClInclude Include="Player.h">
-      <Filter>Player</Filter>
-    </ClInclude>
     <ClInclude Include="GameOverScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -216,14 +213,20 @@
     <ClInclude Include="PlayScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Enemy</Filter>
+    <ClInclude Include="GameClearScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Enemy</Filter>
+    <ClInclude Include="Player.h">
+      <Filter>GameChara</Filter>
     </ClInclude>
     <ClInclude Include="Medium.h">
-      <Filter>Enemy</Filter>
+      <Filter>GameChara</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>GameChara</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>GameChara</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

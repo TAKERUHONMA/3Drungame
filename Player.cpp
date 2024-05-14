@@ -3,9 +3,11 @@
 #include "Engine/Input.h"
 #include "Engine/Collider.h"
 #include "Enemy.h"
+#include "Engine/Camera.h"
+#include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-	:GameObject(parent, "Player"),hModel_(-1),isAlive_(true)
+	:GameObject(parent, "Player"),hModel_(-1),isAlive_(true),count(0)
 {
 }
 
@@ -21,7 +23,7 @@ void Player::Initialize()
 
 void Player::Update()
 {
-	if (transform_.position_.x <= 1)
+	if (transform_.position_.x <= 1 )
 	{
 		if (Input::IsKey(DIK_RIGHT))
 		{
@@ -35,12 +37,16 @@ void Player::Update()
 			transform_.position_.x -= 0.1f;
 		}
 	}
+
 }
 
 void Player::Draw()
 {
-	Model::SetTransform(hModel_, transform_);
-	Model::Draw(hModel_);
+	if (isAlive_)
+	{
+		Model::SetTransform(hModel_, transform_);
+		Model::Draw(hModel_);
+	}
 }
 
 void Player::Release()
@@ -51,8 +57,13 @@ void Player::OnCollision(GameObject* pTarget)
 {
 	if (pTarget->GetObjectName() == "Bullet")
 	{
-		this->KillMe();
-		this->DeActivateMe();
-		//pTarget->KillMe();
+		count += 1;
+		if (count == 5)
+		{
+			this->KillMe();
+			this->DeActivateMe();
+			SceneManager* pSM = (SceneManager*)FindObject("SceneManager");
+			pSM->ChangeScene(SCENE_ID_GAMEOVER);
+		}
 	}
 }

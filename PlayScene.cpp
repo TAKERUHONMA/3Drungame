@@ -2,8 +2,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Stage.h"
-
-
+#include "Medium.h"
+#include "Engine/SceneManager.h"
 
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent, "PlayScene")
@@ -12,6 +12,7 @@ PlayScene::PlayScene(GameObject* parent)
 
 void PlayScene::Initialize()
 {
+	
 	Instantiate<Stage>(this);
 	Instantiate<Player>(this);
 	Instantiate<Enemy>(this);
@@ -19,6 +20,7 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
+
 }
 
 void PlayScene::Draw()

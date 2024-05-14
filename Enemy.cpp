@@ -29,7 +29,7 @@ void Enemy::Update()
 		e2->SetPosition(this->transform_.position_ = { 0.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { 1,0.5,25 });
 		counter =  RUNDOM[rand() % i + 1];
-		counter += 50;
+		counter += 30;
 	}
 	else if (counter == 200)
 	{
@@ -40,7 +40,7 @@ void Enemy::Update()
 		e3->SetPosition(this->transform_.position_ = { 1.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { -1,0.5,25 });
 		counter = RUNDOM[rand() % i + 1];
-		counter += 50;
+		counter += 30;
 	}
 	else if (counter == 400)
 	{
@@ -51,7 +51,7 @@ void Enemy::Update()
 		e->SetPosition(this->transform_.position_ = { -0.5,0,25 }); //“G‚ÌˆÊ’u
 		m->SetPosition(this->transform_.position_ = { 0,0.5,25 });
 		counter = RUNDOM[rand() % i + 1];
-		counter += 50;
+		counter += 30;
 	}
 	else
 	{

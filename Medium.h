@@ -1,10 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Bullet.h"
+
+
 class Medium :
     public GameObject
 {
 	int hModel_;
 	int count;
+	int counter;
 	double z;
 	bool isAlive_;
 public:
@@ -25,5 +29,7 @@ public:
 	void Release() override;
 
 	void OnCollision(GameObject* pTarget);
+	void DeActivateMe() { isAlive_ = false; }
+	void ActivateMe() { isAlive_ = true; }
 };
 
